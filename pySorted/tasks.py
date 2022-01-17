@@ -15,12 +15,18 @@ class AddTask: #pylint: disable=too-many-instance-attributes, too-few-public-met
         self,
         title=None,
         date=None,
-        list=None):
+        list=None,
+        earlyAlert=None,
+        duration=None,
+        tags=None):
 
         self.__name__ = "add"
         self.title = p.Title(title).title
         self.date = p.Date(date).date
         self.list = p.List(list).list
+        self.earlyAlert = p.EarlyAlert(earlyAlert).earlyAlert
+        self.duration = p.Duration(duration).duration
+        self.tags = p.Tags(tags).tags
         
         
         self.callback_url = s.callback_from_obj(self)

@@ -79,3 +79,51 @@ class List: #pylint: disable=too-few-public-methods
             return
 
         self.list = url_encode(list)
+
+
+class EarlyAlert: #pylint: disable=too-few-public-methods
+    '''
+    earlyAlert (optional)
+    Early Alert of item in minutes. Set to ‘none’ for No Alert.
+    '''
+    def __init__(self, earlyAlert):
+        if earlyAlert is None:
+            self.earlyAlert = None
+            return
+        is_string(earlyAlert, "EarlyAlert")
+
+        self.earlyAlert = earlyAlert
+        
+class Duration: #pylint: disable=too-few-public-methods
+    '''
+    duration (optional)
+    Duration of item in minutes, also used to calculate end date for event.
+    '''
+    def __init__(self, duration):
+        if duration is None:
+            self.duration = None
+            return
+        is_string(duration, "duration")
+
+        self.duration = duration
+        
+
+class Tags: #pylint: disable=too-few-public-methods
+    '''
+    tags (optional):
+    A list of tag titles separated by comma.
+    ''' 
+    def __init__(self, tags=None):
+        if not tags:
+            self.tags = None
+            return
+        tags_string = ''
+        for tag in tags:
+            is_string(tag, "{}".format(tag))
+            if tags_string == '':
+                tags_string += tag
+            else:
+                tags_string += ','
+                tags_string += tag
+
+        self.tags = url_encode(tags_string)
