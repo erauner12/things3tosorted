@@ -12,6 +12,8 @@ import subprocess
 
 from pyThings import Tasks
 
+from lib.things3 import get_today_tasks
+
 
 pp = pprint.PrettyPrinter(indent=4)
 
@@ -70,21 +72,17 @@ if __name__ == "__main__":
     # https://github.com/thingsapi/things.py/
     # things_search_results = things.todos()
     
-    process = subprocess.run(args=["./bin/things-cli","--json", "today"],
-                             stdout=subprocess.PIPE,
-                             stdin=subprocess.PIPE,
-                             encoding='utf8')
+    # get a list of all today tasks
+    json_list = get_today_tasks()
     
-    Tasks.UpdateTask(auth_token="zHtl26BeQnW5CuTDxgAfBw",
-                     task_id="bKZ4TrGPbVoWwjLxjpKSs",
-                     prepend_notes="\n[@ Larry Hartsook](obsidian://open?vault=knowledge&file=notes%2F%40%20Larry%20Hartsook)\n")
-
-    json_list = json.loads(process.stdout)
     
-    # pp.pprint(json_list)
+    pp.pprint(json_list)
     
     # get a list of all today tasks that contain a tag named "test"
     list_json = [x for x in json_list if x.get("tags") is not None if "test" in x["tags"]]
+    
+    
+    
     # A Script Filter is required to return an items array of zero or more items.
     # Each item describes a result row displayed in Alfred.
     alfred_json = json.dumps({
