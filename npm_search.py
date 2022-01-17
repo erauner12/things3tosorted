@@ -88,7 +88,7 @@ if __name__ == "__main__":
     # A Script Filter is required to return an items array of zero or more items.
     # Each item describes a result row displayed in Alfred.
     alfred_json = json.dumps({
-        "items": get_alfred_items(json_dict)
+        "items": get_alfred_items(json_list)
     }, indent=2)
 
     # # Pass the formatted JSON data back to Alfred
