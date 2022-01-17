@@ -10,9 +10,11 @@ import pprint
 import subprocess
 # import things as api
 
-from pyThings import Tasks
 
-from lib.things3 import get_today_tasks
+
+from lib.things3 import get_today_tasks, update_all_things_tasks
+from lib.sorted3 import add_all_things_tasks
+
 
 
 pp = pprint.PrettyPrinter(indent=4)
@@ -59,22 +61,34 @@ if __name__ == "__main__":
     # https://github.com/thingsapi/things.py/
     # things_search_results = things.todos()
     
+    
     # get a list of all today tasks
     json_list = get_today_tasks()
     
     
-    pp.pprint(json_list)
+    # pp.pprint(json_list)
     
-    # get a list of all today tasks that contain a tag named "test"
-    list_json = [x for x in json_list if x.get("tags") is not None if "test" in x["tags"]]
+    # get a list of all today tasks that DO NOT contain a tag named "sorted3"
+    no_sorted_tag = [x for x in json_list
+                     if x.get("tags",["fallback"]) is not None
+                     and x.get("type") == "to-do"]
+    
+    pp.pprint(no_sorted_tag)
+    
+    # Add them to sorted
+    # add_all_things_tasks(no_sorted_tag)
+                         
+    # Add "sorted3" tag to all things3 tasks that were just added to sorted
+    # Need uuid of each things3 task
+    auth_token = "zHtl26BeQnW5CuTDxgAfBw"
+    # update_all_things_tasks(auth_token, no_sorted_tag)
     
     
-    
-    # A Script Filter is required to return an items array of zero or more items.
-    # Each item describes a result row displayed in Alfred.
-    alfred_json = json.dumps({
-        "items": get_alfred_items(json_list)
-    }, indent=2)
+    # # A Script Filter is required to return an items array of zero or more items.
+    # # Each item describes a result row displayed in Alfred.
+    # alfred_json = json.dumps({
+    #     "items": get_alfred_items(json_list)
+    # }, indent=2)
 
-    # # Pass the formatted JSON data back to Alfred
-    sys.stdout.write(alfred_json)
+    # # # Pass the formatted JSON data back to Alfred
+    # sys.stdout.write(alfred_json)
