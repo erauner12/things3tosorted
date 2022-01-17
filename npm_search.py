@@ -6,7 +6,6 @@ the packages based on a search term.
 import sys
 import json
 import pprint
-import things
 
 import subprocess
 # import things as api
@@ -71,12 +70,6 @@ if __name__ == "__main__":
     # https://github.com/thingsapi/things.py/
     # things_search_results = things.todos()
     
-    # pp.pprint(things.todos())
-
-    # today = api.today()
-    
-    # pp.pprint(today)
-
     process = subprocess.run(args=["./bin/things-cli","--json", "today"],
                              stdout=subprocess.PIPE,
                              stdin=subprocess.PIPE,
