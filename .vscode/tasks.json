@@ -6,7 +6,7 @@
             "type": "shell",
             "command": "~/.pyenv/versions/3.8.12/envs/provisioning-ng/bin/python",
             "args": [
-                "${workspaceFolder}/npm_search.py"
+                "${workspaceFolder}/things_sorted_sync.py"
             ],
             "problemMatcher": [],
             "group": {
