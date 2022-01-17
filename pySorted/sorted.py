@@ -54,15 +54,6 @@ def x_call_handler(obj):
     popen = subprocess.Popen(args, stdout=subprocess.PIPE)
     response_obj = json.loads(popen.stdout.read())
     print(response_obj)
-    
-    # Parse possible responses from Things.
-    # if 'x-things-id' in response_obj:
-    #     obj.x_things_id = response_obj['x-things-id']
-    # if 'x-things-ids' in response_obj:
-    #     obj.x_things_ids = response_obj['x-things-ids']
-    # if 'x-things-scheme-version' in response_obj:
-    #     obj.x_things_scheme_version = response_obj['x-things-scheme-version']
-    # if 'x-things-client-version' in response_obj:
-    #     obj.x_things_client_version = response_obj['x-things-client-version']
+    # TODO: Will add parse from sorted 3 logic here
 
     return obj
