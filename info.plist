@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.cool-runningz.alfred-npm-search</string>
+	<key>connections</key>
+	<dict>
+		<key>3404D1C9-A593-4D5C-AB0A-D4822B94EDFC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>040D89BA-CF4D-4552-A445-75728EABDD28</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Alyssa Holland</string>
+	<key>description</key>
+	<string>Search for npm packages using Alfred</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>things 3 sync</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>.ts</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Searching packages... 🔍</string>
+				<key>script</key>
+				<string>python3 npm_search.py "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Search for an npm package</string>
+				<key>type</key>
+				<integer>5</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>3404D1C9-A593-4D5C-AB0A-D4822B94EDFC</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>040D89BA-CF4D-4552-A445-75728EABDD28</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>npm Package Search for Alfred
+=============================
+
+This workflow allows you to quickly and easily search for a package and navigate to its corresponding npm page.  
+
+For more information, visit:
+https://github.com/Cool-Runningz/alfred-npm-search</string>
+	<key>uidata</key>
+	<dict>
+		<key>040D89BA-CF4D-4552-A445-75728EABDD28</key>
+		<dict>
+			<key>xpos</key>
+			<integer>425</integer>
+			<key>ypos</key>
+			<integer>275</integer>
+		</dict>
+		<key>3404D1C9-A593-4D5C-AB0A-D4822B94EDFC</key>
+		<dict>
+			<key>xpos</key>
+			<integer>160</integer>
+			<key>ypos</key>
+			<integer>275</integer>
+		</dict>
+	</dict>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>1.0</string>
+	<key>webaddress</key>
+	<string>https://github.com/Cool-Runningz/alfred-npm-search</string>
+</dict>
+</plist>
