@@ -86,10 +86,12 @@ if __name__ == "__main__":
                      task_id="bKZ4TrGPbVoWwjLxjpKSs",
                      prepend_notes="\n[@ Larry Hartsook](obsidian://open?vault=knowledge&file=notes%2F%40%20Larry%20Hartsook)\n")
 
-    json_dict = json.loads(process.stdout)
+    json_list = json.loads(process.stdout)
     
-    # pp.pprint(json_dict)
+    # pp.pprint(json_list)
     
+    # get a list of all today tasks that contain a tag named "test"
+    list_json = [x for x in json_list if x.get("tags") is not None if "test" in x["tags"]]
     # A Script Filter is required to return an items array of zero or more items.
     # Each item describes a result row displayed in Alfred.
     alfred_json = json.dumps({
