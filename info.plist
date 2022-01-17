@@ -58,7 +58,7 @@
 				<key>runningsubtext</key>
 				<string>Searching packages... 🔍</string>
 				<key>script</key>
-				<string>python3 npm_search.py "{query}"</string>
+				<string>python3 things_sorted_sync.py "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
