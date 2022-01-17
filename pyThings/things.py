@@ -46,7 +46,6 @@ def x_call_handler(obj):
 
 
     args = [ x_call_path, '-url', obj.callback_url, "-activateApp", activate_app ]
-    print(args)
 
     popen = subprocess.Popen(args, stdout=subprocess.PIPE)
     response_obj = json.loads(popen.stdout.read())
