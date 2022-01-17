@@ -53,19 +53,6 @@ def get_alfred_items(search_results):
         return get_formatted_results(search_results)
 
 
-def getProcessOutput(cmd):
-    process = subprocess.Popen(
-        cmd,
-        shell=True,
-        stdout=subprocess.PIPE)
-    process.wait()
-    data, err = process.communicate()
-    if process.returncode == 0:
-        return data.decode('utf-8')
-    else:
-        print("Error:", err)
-    return ""
-
 if __name__ == "__main__":
    # Make API call to fetch the npm search results and assign it to a variable
     # npm_search_results = requests.get(NPM_API_URL).json()
