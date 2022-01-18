@@ -42,7 +42,7 @@
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
-				<integer>0</integer>
+				<integer>2</integer>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>keyword</key>
@@ -56,9 +56,12 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>Searching packages... 🔍</string>
+				<string>Updating Things3 and Sorted...</string>
 				<key>script</key>
-				<string>python3 things_sorted_sync.py "{query}"</string>
+				<string># For when you want to add a command or query
+# python3 things_sorted_sync.py {query}
+
+python3 things_sorted_sync.py</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -66,11 +69,11 @@
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string>Search for an npm package</string>
+				<string>Update Things3 and Sorted</string>
 				<key>type</key>
 				<integer>5</integer>
 				<key>withspace</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
